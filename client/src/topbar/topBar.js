@@ -1,7 +1,7 @@
 import React from "react";
 import "./topBar.css";
 
-export default function topBar() {
+export default function TopBar() {
   return (
     <div className="top">
       <div className="topLeft">
@@ -21,7 +21,7 @@ export default function topBar() {
       <div className="topRight"></div>
       <img
         className="topImg"
-        src="https://unsplash.com/photos/_7LbC5J-jw4"
+        src={require("../assets/images/header.jpg")}
         alt=""
       />
       <i className="topSearchIcon fas fa-search"></i>

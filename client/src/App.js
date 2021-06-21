@@ -1,5 +1,5 @@
 import React from 'react';
-import TopBar from './topbar/topBar';
+import TopBar from './topbar/TopBar';
 
 
 
