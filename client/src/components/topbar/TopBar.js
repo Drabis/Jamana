@@ -1,6 +1,6 @@
 import React from "react";
 import "./topBar.css";
-import Image from "../assets/images/ivana.jpg";
+import Image from "../../assets/images/ivana.jpg";
 
 export default function TopBar() {
   return (

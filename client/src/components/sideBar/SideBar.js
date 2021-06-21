@@ -1,6 +1,6 @@
 import React from "react";
 import "./sidebar.css";
-import Image from "../assets/images/amani.jpg";
+import Image from "../../assets/images/amani.jpg";
 
 export default function SideBar() {
   return (
