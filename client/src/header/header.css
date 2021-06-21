@@ -9,7 +9,7 @@
 }
 
 .headerTitleSm {
-    position: absolute;
+    position: relative;
     top: 18px;
     font-style: 20px;
 }

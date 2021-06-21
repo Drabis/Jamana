@@ -1,5 +1,6 @@
 import React from "react";
 import "./topBar.css";
+import Image from "../assets/images/ivana.jpg";
 
 export default function TopBar() {
   return (
@@ -19,11 +20,7 @@ export default function TopBar() {
         </ul>
       </div>
       <div className="topRight"></div>
-      <img
-        className="topImg"
-        src={require("../assets/images/header.jpg")}
-        alt=""
-      />
+      <img className="topImg" src={Image} alt="" />
       <i className="topSearchIcon fas fa-search"></i>
     </div>
   );

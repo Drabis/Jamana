@@ -20,7 +20,7 @@
 }
 .topIcon {
     font-size: 25px;
-    margin-right: 10px;
+    margin-right: 30px;
     color: #444;
     cursor: pointer;
 }
@@ -44,9 +44,9 @@
     cursor: pointer;
 }
 
-.searchIcon {
+.topSearchIcon {
     font-size: 18px;
     color: #666;
     cursor: pointer;
-    margin-left: 15px;
+    margin-left: 10px;
 }
