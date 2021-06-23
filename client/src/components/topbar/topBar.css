@@ -8,6 +8,10 @@
     align-items: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.topLeft{
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    font-style: italic;
+}
 
 .topLeft, .topRight {
     flex: 3;
@@ -18,12 +22,7 @@
 .topCenter {
     flex: 6;
 }
-.topIcon {
-    font-size: 25px;
-    margin-right: 30px;
-    color: #444;
-    cursor: pointer;
-}
+
 .topImg{
     width: 40px;
     height: 40px;
