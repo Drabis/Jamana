@@ -16,6 +16,17 @@ export default function Home() {
           subtitle="I don't know yet"
           title="title"
         />
+        <CardPost
+          image="https://cdn.pixabay.com/photo/2021/01/28/18/21/beach-5958718_960_720.jpg"
+          subtitle="I don't know yet"
+          title="title"
+        />
+        <CardPost
+          image="https://cdn.pixabay.com/photo/2021/01/28/18/21/beach-5958718_960_720.jpg"
+          subtitle="I don't know yet"
+          title="title"
+        />
+
         <SideBar />
         {/* <Posts /> */}
       </div>

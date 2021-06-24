@@ -1,4 +1,3 @@
-import RichEditor from "../RichEditor";
 import React from "react";
 import "./style.css";
 import {
@@ -27,7 +26,6 @@ const CardPost = (props) => {
             {props.subtitle}
           </CardSubtitle>
           <CardText>
-            <RichEditor />
           </CardText>
         </CardBody>
       </Card>
