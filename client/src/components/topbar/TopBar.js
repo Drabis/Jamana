@@ -3,8 +3,8 @@ import "./topBar.css";
 import { Link } from "react-router-dom";
 import Image from "../../assets/images/ivana.jpg";
 
-export default function TopBar() {
-  const user = false
+export default function TopBar(props) {
+  
   return (
     <div className="top">
       <div className="topLeft">
@@ -28,15 +28,32 @@ export default function TopBar() {
             </Link>
           </li>
           <li className="topListItem">
-            <Link className="link" to="/write">
+            {props.user ? <Link className="link" to="/write">
               WRITE
-            </Link>
+            </Link> : null }
           </li>
-          <li className="topListItem">{user && "LOGOUT"}</li>
+          {props.user ? <li onClick={props.logout} className="topListItem">LOGOUT</li> : null }
         </ul>
       </div>
-      <div className="topRight"></div>
-      <img className="topImg" src={Image} alt="" />
+      <div className="topRight">
+        {props.user ? (
+          <img className="topImg" src={Image} alt="" />
+        ) : (
+          <ul className="topList">
+            <li className="topListItem">
+              <Link className="link" to="/signin">
+                LOGIN
+              </Link>
+            </li>
+            <li className="topListItem">
+              <Link className="link" to="/register">
+                REGISTER
+              </Link>
+            </li>
+          </ul>
+        )}
+      </div>
+
       <i className="topSearchIcon fas fa-search"></i>
     </div>
   );

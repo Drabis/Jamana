@@ -1,32 +1,38 @@
-import React from "react";
+import React, {useState} from "react";
 import TopBar from "./components/topbar/TopBar";
 import Home from "./components/pages/home/Home";
-// import Posts from "./components/posts/Posts";
-import RichEditor from "./components/RichEditor";
+import Write from "./components/pages/Write/Write";
 import SigninPage from "./components/pages/Signin/SigninPage";
 import RegisterPage from "./components/pages/Register/RegisterPage";
 
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-  const user = false;
+  const [user, setUser] = useState(false);
+
+  const handleUserSignin = (id) => {
+    setUser(id)
+  }
+  const handleLogout = () => {
+    setUser(false)
+  }
   return (
     <Router>
-      <TopBar />
+      <TopBar user={user} logout={handleLogout}/>
       <Switch>
         <Route exact path="/">
-          <Home />
+          {user ? <Home user={user} /> : <RegisterPage handleUserSignin={handleUserSignin} />}
         </Route>
         <Route path="/register">
-          { user? <Home/> :<RegisterPage />}
+          <RegisterPage handleUserSignin={handleUserSignin} />
         </Route>
         <Route path="/signin">
-          <SigninPage />
+          <SigninPage handleUserSignin={handleUserSignin} />
         </Route>
         <Route path="/write">
-          <RichEditor />
-        </Route> 
+          <Write />
+        </Route>
       </Switch>
     </Router>
   );

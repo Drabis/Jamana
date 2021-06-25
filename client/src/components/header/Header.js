@@ -7,7 +7,7 @@ export default function Header() {
     <div className="header">
       <div className="headerTitles">
         <span className="headerTitleSm">Country & Culture</span>
-        <span className="headerTitleLg">Blog</span>
+        <span className="headerTitleLg">Jamana</span>
       </div>
       <img className="headerImg" src={Image} alt="" />
     </div>

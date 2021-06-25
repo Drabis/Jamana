@@ -3,8 +3,21 @@
 const router = require("express").Router();
 const { User, Post  } = require("../models");
 
+router.get("/user/:id", async (req, res) => {
+  // get all posts for user id in req.params.id
+  const userPost = await Post.fillAll(req.params.id, {
+    include: [
+      {
+        model: User,
+      },
+      {
+        model: Post
+      }
+    ]
+  })
+})
 // This grabs the Post by ID, and includes the user who made it, and the comments related to that post, and their respective comment creators
-router.get("/:id", async (req, res) => {
+router.get("/post/:id", async (req, res) => {
   try {
     const rawPostData = await Post.findByPk(req.params.id, {
       include: [

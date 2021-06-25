@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const bcrypt = require('bcrypt');
 
 const userSchema = new Schema({
   username: {
@@ -18,9 +19,14 @@ const userSchema = new Schema({
     required: "Password is Required",
     validate: [({ length }) => length >= 6, "Password should be longer."],
   },
+  profilePic: {
+    type: String,
+    default: ""
+  }
 });
 
 userSchema.pre("save", async function (next) {
+  console.log("Hello")
   if (!this.isModified("password")) {
     return next();
   }
@@ -32,6 +38,7 @@ userSchema.pre("save", async function (next) {
 
     next();
   } catch (err) {
+    console.log(err)
     return next(err);
   }
 });

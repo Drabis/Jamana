@@ -8,7 +8,6 @@ const categorySchema = new Schema(
       require: true,
     },
   },
-  { timestamps: true }
 );
 
 const Category = model("Category", categorySchema);
