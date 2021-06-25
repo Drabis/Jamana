@@ -1,0 +1,9 @@
+.postBtn {
+    background-color: turquoise;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 70px;
+    align-items: flex-end;
+    margin: 10px 0px 0px 90%;   
+}

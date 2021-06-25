@@ -13,9 +13,9 @@ export default function TopBar(props) {
       <div className="topCenter">
         <ul className="topList">
           <li className="topListItem">
-            <Link className="link" to="/">
+           {props.user ? <Link className="link" to="/">
               HOME
-            </Link>
+            </Link> : null }
           </li>
           <li className="topListItem">
             <Link className="link" to="/about">
