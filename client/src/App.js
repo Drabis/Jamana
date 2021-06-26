@@ -31,7 +31,7 @@ function App() {
           <SigninPage handleUserSignin={handleUserSignin} />
         </Route>
         <Route path="/write">
-          <Write />
+          <Write user={user}/>
         </Route>
       </Switch>
     </Router>

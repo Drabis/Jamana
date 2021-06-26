@@ -19,6 +19,12 @@ const userSchema = new Schema({
     required: "Password is Required",
     validate: [({ length }) => length >= 6, "Password should be longer."],
   },
+  posts: [
+    {
+    type: Schema.Types.ObjectId,
+    ref: "Post"
+    }
+  ],
   profilePic: {
     type: String,
     default: ""

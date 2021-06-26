@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Editor, EditorState, RichUtils } from 'draft-js';
 
 import BlockStyleControls from './BlockStyleControls';
@@ -6,13 +6,19 @@ import InlineStyleControls from './InlineStyleControls';
 
 import './styles.css';
 
-const RichEditor = () => {
+const RichEditor = (props) => {
 	const [ editorState, setEditorState ] = useState( EditorState.createEmpty() );
 	const editorRef = useRef();
 
 	const handleFocus = () => editorRef.current.focus();
 
-	const handleChange = newState => setEditorState( newState );
+	const handleChange = newState => {
+		setEditorState( newState );
+	}
+
+	useEffect(() => {
+		props.updateBlog(editorState.getCurrentContent())
+	}, [props, editorState])
 
 	const handleKeyCommand = command => {
 		const newState = RichUtils.handleKeyCommand( editorState, command );

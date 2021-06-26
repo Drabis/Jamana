@@ -1,21 +1,36 @@
 //Copy from the tech_blog homework
 
 const router = require("express").Router();
-const { User, Post  } = require("../models");
+const { User, Post } = require("../../models");
+
+router.post("/submit/:id", async (req, res) => {
+  Post.create(req.body)
+    .then(({ _id }) =>
+      User.findOneAndUpdate(
+        { _id: req.params.id },
+        { $push: { posts: _id } },
+        { new: true }
+      )
+    )
+    .then((user) => {
+      res.json(user);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
 
 router.get("/user/:id", async (req, res) => {
-  // get all posts for user id in req.params.id
-  const userPost = await Post.fillAll(req.params.id, {
-    include: [
-      {
-        model: User,
-      },
-      {
-        model: Post
-      }
-    ]
-  })
-})
+  // get all posts for user
+  User.find({ _id: req.params.id })
+    .populate("posts")
+    .then((user) => {
+      res.json(user);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
 // This grabs the Post by ID, and includes the user who made it, and the comments related to that post, and their respective comment creators
 router.get("/post/:id", async (req, res) => {
   try {
