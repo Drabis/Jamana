@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../header/Header";
 import SideBar from "../../sideBar/SideBar";
-// import Posts from "../../posts/Posts";
 import CardPost from "../../Card";
 import "./home.css";
 import API from "../../../utils/API";
