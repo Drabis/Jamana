@@ -23,7 +23,7 @@ const CardPost = (props) => {
         <CardBody>
           <CardTitle tag="h5">{props.title}</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">
-            {props.description}
+            {props.subtitle}
           </CardSubtitle>
           <CardText>
           </CardText>

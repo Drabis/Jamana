@@ -4,6 +4,7 @@ import SideBar from "../../sideBar/SideBar";
 import CardPost from "../../Card";
 import "./home.css";
 import API from "../../../utils/API";
+import RichEditor from "../../RichEditor";
 
 export default function Home(props) {
   const [posts, setPosts] = useState([]);

@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const User = require("../../models/User.js");
+const bcrypt = require('bcrypt');
 
 router.post("/register", async (req, res) => {
   try {
@@ -56,5 +57,4 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
-
 module.exports = router;
