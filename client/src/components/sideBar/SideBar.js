@@ -18,12 +18,13 @@ export default function SideBar() {
           <li className="sidebarListItem"> Music</li>
           <li className="sidebarListItem"> Sport</li>
           <li className="sidebarListItem"> Food</li>
+          <li className="sidebarListItem"> Social</li>
         </ul>
         <span className="sidebarTitle">FOLLOW US</span>
         <div className="sidebarSocial">
-        <i className="sideIcon fab fa-facebook-square"></i>
-        <i className="sideIcon fab fa-instagram-square"></i>
-        <i className="sideIcon fab fa-twitter-square"></i>
+          <i className="sideIcon fab fa-facebook-square"></i>
+          <i className="sideIcon fab fa-instagram-square"></i>
+          <i className="sideIcon fab fa-twitter-square"></i>
         </div>
       </div>
     </div>

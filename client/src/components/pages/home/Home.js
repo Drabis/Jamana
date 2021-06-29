@@ -47,9 +47,8 @@ export default function Home(props) {
           subtitle="I don't know yet"
           title="title"
         /> */}
-
-        <SideBar />
       </div>
+      <SideBar />
     </>
   );
 }
