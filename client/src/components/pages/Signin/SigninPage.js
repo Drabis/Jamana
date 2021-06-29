@@ -17,8 +17,9 @@ const handleSignin = (e) => {
     if (response.status === 200) {
       props.handleUserSignin(response.data.user._id)
       history.push("/");
-    }else{
-      alert("Failed to delete blog.");
+    }if(response.status === 400) {
+      
+      alert("Please enter the correct information");
     }
     // history.push("/")
   })

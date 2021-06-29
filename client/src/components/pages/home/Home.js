@@ -4,7 +4,6 @@ import SideBar from "../../sideBar/SideBar";
 import CardPost from "../../Card";
 import "./home.css";
 import API from "../../../utils/API";
-import RichEditor from "../../RichEditor";
 
 export default function Home(props) {
   const [posts, setPosts] = useState([]);
@@ -17,17 +16,17 @@ export default function Home(props) {
     console.log(props.user);
   }, []);
 
-  const mapPosts = () => {
-    posts.map((post) => {
-      return (
-        <CardPost
-          image={post.img}
-          subtitle={post.subtitle}
-          title={post.title}
-        />
-      );
-    });
-  };
+  // const mapPosts = () => {
+  //   posts.map((post) => {
+  //     return (
+  //       <CardPost
+  //         image={post.img}
+  //         subtitle={post.subtitle}
+  //         title={post.title}
+  //       />
+  //     );
+  //   });
+  // };
 
   return (
     <>
@@ -40,6 +39,7 @@ export default function Home(props) {
             image={post.img}
             description={post.description}
             title={post.title}
+            body={post.body}
           />
         ))}
         {/* <CardPost

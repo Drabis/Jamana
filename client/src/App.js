@@ -22,7 +22,7 @@ function App() {
       <TopBar user={user} logout={handleLogout}/>
       <Switch>
         <Route exact path="/">
-          {user ? <Home user={user} /> : <RegisterPage handleUserSignin={handleUserSignin} />}
+          {user ? <Home user={user} /> : <SigninPage handleUserSignin={handleUserSignin} />}
         </Route>
         <Route path="/register">
           <RegisterPage handleUserSignin={handleUserSignin} />

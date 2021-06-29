@@ -8,6 +8,7 @@ import {
   CardTitle,
   CardSubtitle,
 } from "reactstrap";
+// import image from "../../assets/images/";
 
 const CardPost = (props) => {
   return (
@@ -17,16 +18,15 @@ const CardPost = (props) => {
           className="postImg"
           top
           width="100%"
-          src={props.image}
+          // src={image}
           alt="Card image cap"
         />
         <CardBody>
-          <CardTitle tag="h5">{props.title}</CardTitle>
+          <CardTitle tag="h4">{props.title}</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">
             {props.subtitle}
           </CardSubtitle>
-          <CardText>
-          </CardText>
+          <CardText tag="p">{props.text}</CardText>
         </CardBody>
       </Card>
     </div>
