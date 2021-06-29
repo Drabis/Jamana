@@ -5,7 +5,7 @@ import "./sidebar.css";
 export default function SideBar() {
   return (
     <div className="sidebar">
-      <div className="sidebarItem">
+      {/* <div className="sidebarItem">
         <span className="sidebarTitle">ABOUT US</span>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolore
@@ -25,8 +25,8 @@ export default function SideBar() {
           <i className="sideIcon fab fa-facebook-square"></i>
           <i className="sideIcon fab fa-instagram-square"></i>
           <i className="sideIcon fab fa-twitter-square"></i>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </div>
   );
 }

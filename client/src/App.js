@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import TopBar from "./components/topbar/TopBar";
 import Home from "./components/pages/home/Home";
 import Write from "./components/pages/Write/Write";
@@ -11,7 +11,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   const [user, setUser] = useState(false);
 
+  useEffect(() => {
+   const id = localStorage.getItem("userId") || null;
+    if(id !== null) {
+      handleUserSignin(id)
+    }
+  },[])
+
+
   const handleUserSignin = (id) => {
+    localStorage.setItem("userId", id)
     setUser(id)
   }
   const handleLogout = () => {

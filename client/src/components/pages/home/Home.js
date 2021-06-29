@@ -4,9 +4,12 @@ import SideBar from "../../sideBar/SideBar";
 import CardPost from "../../Card";
 import "./home.css";
 import API from "../../../utils/API";
+import {Row} from "reactstrap";
 
 export default function Home(props) {
   const [posts, setPosts] = useState([]);
+  const [post1, setPost1] = useState([]);
+  const [post2, setPost2] = useState([]);
 
   useEffect(() => {
     API.getPostsByUser(props.user).then((response) => {
@@ -16,6 +19,23 @@ export default function Home(props) {
     console.log(props.user);
   }, []);
 
+  useEffect(() => {
+    handlepostlimit();
+  }, [posts]);
+
+  const handlepostlimit = () => {
+    const firstPosts = [];
+    const secondPosts = [];
+    posts.forEach((post, index) => {
+      if (index <= 3) {
+        firstPosts.push(post);
+      } else if (index > 3 && index <= 7) {
+        secondPosts.push(post);
+      }
+      setPost1(firstPosts);
+      setPost2(secondPosts);
+    });
+  };
   // const mapPosts = () => {
   //   posts.map((post) => {
   //     return (
@@ -33,20 +53,29 @@ export default function Home(props) {
       <Header />
       <div className="home">
         {/* {mapPosts()} */}
-        {posts.map((post) => (
-          <CardPost
-            key={post._id}
-            image={post.img}
-            description={post.description}
-            title={post.title}
-            body={post.body}
-          />
-        ))}
-        {/* <CardPost
-          image="https://cdn.pixabay.com/photo/2021/01/28/18/21/beach-5958718_960_720.jpg"
-          subtitle="I don't know yet"
-          title="title"
-        /> */}
+        <Row>
+          {post1.map((post) => (
+            <CardPost
+              key={post._id}
+              image={post.img}
+              description={post.description}
+              title={post.title}
+              body={post.body.blocks[0].text}
+            />
+          ))}
+        </Row>
+        <Row>
+          {post2.map((post) => (
+            <CardPost
+              key={post._id}
+              image={post.img}
+              description={post.description}
+              title={post.title}
+              body={post.body.blocks[0].text}
+            />
+          ))}
+        </Row>
+
       </div>
       <SideBar />
     </>
