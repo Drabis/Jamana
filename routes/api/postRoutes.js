@@ -21,7 +21,6 @@ router.post("/submit/:id", async (req, res) => {
 });
 
 router.get("/user/:id", async (req, res) => {
-  // get all posts for user
   User.find({ _id: req.params.id })
     .populate("posts")
     .then((user) => {
@@ -31,36 +30,71 @@ router.get("/user/:id", async (req, res) => {
       res.json(err);
     });
 });
-// This grabs the Post by ID, and includes the user who made it, and the comments related to that post, and their respective comment creators
-router.get("/post/:id", async (req, res) => {
+
+// UPDATE
+router.put("/user/:id", async (req, res) => {
   try {
-    const rawPostData = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          as: "post_creator",
-          attributes: ["username"],
-        },
-        {
-          model: Comment,
-          as: "post_comments",
-          include: {
-            model: User,
-            as: "comment_creator",
-            attributes: ["username"],
+    const post = await Post.findById(req.params.id);
+    if (post.username === req.body.username) {
+      try {
+        const updatedPost = await Post.findByIdAndUpdate(
+          req.params.id,
+          {
+            $set: req.body,
           },
-        },
-      ],
-    });
-    const postData = rawPostData.get({ plain: true });
-    console.log(postData);
-    res.status(200).render("blogpost", {
-      postData,
-      logged_in: req.session.logged_in,
-      userId: req.session.user_id,
-    });
+          { new: true }
+        );
+        res.status(200).json(updatedPost);
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    } else {
+      res.status(401).json("You can't update this post!");
+    }
   } catch (err) {
-    res.status(400).json("Page not found!");
+    res.status(500).json(err);
+  }
+});
+// DELETE
+router.delete("/user/:id", async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+    if (post.username === req.body.username) {
+      try {
+        await post.delete();
+        res.status(200).json("Post has been deleted");
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    } else {
+      res.status(401).json("You can't delete this post!");
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// GET ALL POSTS INCLUDE CATEGORIES
+
+router.get("/", async (req, res) => {
+  const username = req.query.user;
+  const catName = req.qurey.cat;
+  try {
+    let posts;
+    if (username) {
+      post = await Post.find({ username });
+    } else if (catname) {
+      posts = await Post.find({
+        categories: {
+          $in: [catName],
+        },
+      });
+    } else {
+      posts = await Post.find();
+    }
+    res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
