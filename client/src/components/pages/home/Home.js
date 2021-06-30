@@ -5,6 +5,7 @@ import CardPost from "../../Card";
 import "./home.css";
 import API from "../../../utils/API";
 import {Row} from "reactstrap";
+import axios from "axios"
 
 export default function Home(props) {
   const [posts, setPosts] = useState([]);
