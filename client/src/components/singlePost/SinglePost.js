@@ -2,10 +2,18 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
+
 export default function SinglePost() {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({})
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete("post/" + path)
+      window.location.replace('/')
+    }catch (err){}
+  };
 
   useEffect(() => {
     const getPost = async () => {
@@ -24,7 +32,7 @@ export default function SinglePost() {
           {post.title}
           <div>
             <i className="singlePostIcon far fa-edit"></i>
-            <i className="singlePostIcon far fa-trash-alt"></i>
+            <i className="singlePostIcon far fa-trash-alt" onClick={handleDelete}></i>
           </div>
         </h1>
         <div className="singlePostInfo">

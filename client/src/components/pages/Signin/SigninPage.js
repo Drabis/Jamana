@@ -4,26 +4,26 @@ import { Link, useHistory } from "react-router-dom";
 import API from "../../../utils/API";
 
 export default function SigninPage(props) {
-  let history = useHistory()
-  const [formInput, setFormInput] = useState({})
-const handleInputChange = (e) => {
-  setFormInput({...formInput, [e.target.name]: e.target.value})
-  console.log(formInput)
-}
-const handleSignin = (e) => {
-  e.preventDefault()
-  API.signinUser(formInput).then(response => {
-    console.log(response)
-    if (response.status === 200) {
-      props.handleUserSignin(response.data.user._id)
+  let history = useHistory();
+  const [formInput, setFormInput] = useState({});
+  const handleInputChange = (e) => {
+    setFormInput({ ...formInput, [e.target.name]: e.target.value });
+    console.log(formInput);
+  };
+  const handleSignin = (e) => {
+    e.preventDefault();
+    API.signinUser(formInput).then((response) => {
+      console.log(response);
+      if (response.status === 200) {
+        props.handleUserSignin(response.data.user._id);
+        history.push("/");
+      }
+      if (response.status === 400) {
+        alert("Please enter the correct information");
+      }
       history.push("/");
-    }if(response.status === 400) {
-      
-      alert("Please enter the correct information");
-    }
-    // history.push("/")
-  })
-}
+    });
+  };
   return (
     <div className="login">
       <span className="loginTitle">Login</span>
@@ -42,7 +42,9 @@ const handleSignin = (e) => {
           type="password"
           placeholder="Enter your password"
         />
-        <button onClick={handleSignin} className="loginButton">Login</button>
+        <button onClick={handleSignin} className="loginButton">
+          Login
+        </button>
       </form>
       <button className="loginRegisterButon">
         <Link className="link" to="/register">

@@ -4,6 +4,8 @@ import Home from "./components/pages/home/Home";
 import Write from "./components/pages/Write/Write";
 import SigninPage from "./components/pages/Signin/SigninPage";
 import RegisterPage from "./components/pages/Register/RegisterPage";
+import SinglePost from "./components/singlePost/SinglePost";
+
 
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -41,6 +43,9 @@ function App() {
         </Route>
         <Route path="/write">
           <Write user={user}/>
+        </Route>
+        <Route path="/post/:postId">
+          <SinglePost />
         </Route>
       </Switch>
     </Router>

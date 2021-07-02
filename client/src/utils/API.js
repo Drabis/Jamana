@@ -17,7 +17,13 @@ const API = {
             description: info.description
         }
         return axios.post(`/api/posts/submit/${userId}`, blog)
-    }
+    },
+    blogCategory: () => {
+        return axios.get("/api/categories/")
+    },
+    newCategory: (name) => {
+        return axios.post("/api/categories/", name)
+    },
     
 }
 export default API

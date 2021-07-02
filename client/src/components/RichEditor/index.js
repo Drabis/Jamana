@@ -18,7 +18,7 @@ const RichEditor = (props) => {
 
 	useEffect(() => {
 		props.updateBlog(editorState.getCurrentContent())
-	}, [props, editorState])
+	}, [editorState])
 
 	const handleKeyCommand = command => {
 		const newState = RichUtils.handleKeyCommand( editorState, command );

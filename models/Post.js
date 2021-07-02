@@ -2,8 +2,8 @@ const { Schema, model } = require("mongoose");
 
 const postSchema = new Schema(
   {
-
-    // body: Object,
+    body: String,
+    plainTextBody: String,
     // title: String,
     // description: String
 
@@ -16,6 +16,12 @@ const postSchema = new Schema(
     description: {
       type: String,
       require: true,
+      trim: true,
+      min: 3,
+      max: 1000,
+    },
+    photo: {
+      type: String,
     },
     username: {
       type: String,

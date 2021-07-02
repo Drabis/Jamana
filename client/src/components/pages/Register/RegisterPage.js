@@ -20,7 +20,6 @@ const handleRegister = (e) => {
     }
     if (response.status === 400) {
       // failed registration
-      alert("Failed to Register!")
     }
   })
 }
