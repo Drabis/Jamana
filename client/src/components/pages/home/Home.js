@@ -11,7 +11,6 @@ import draftToHtml from "draftjs-to-html";
 export default function Home(props) {
   const [posts, setPosts] = useState([]);
   const [post1, setPost1] = useState([]);
-  const [post2, setPost2] = useState([]);
 
   // DELETE POST
   const handleDelete = (id) => {

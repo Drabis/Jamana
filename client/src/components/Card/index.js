@@ -4,7 +4,7 @@ import axios from "axios";
 import { Card, Button, CardTitle, CardText, Row, Col } from "reactstrap";
 import parse from "html-react-parser";
 
-const CardPost = (props, updateBlog) => {
+const CardPost = (props) => {
   const handleDelete = async () => {
     try {
       await axios.delete("/api/posts/" + props.id);
