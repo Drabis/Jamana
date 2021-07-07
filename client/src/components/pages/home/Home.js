@@ -14,10 +14,10 @@ export default function Home(props) {
   const [post2, setPost2] = useState([]);
 
   // DELETE POST
-  // const handleDelete = (id) => {
-  //   const newPost = posts.filter((post) => post._id !== id);
-  //   setPosts(newPost);
-  // };
+  const handleDelete = (id) => {
+    const newPost = posts.filter((post) => post._id !== id);
+    setPosts(newPost);
+  };
 
   useEffect(() => {
     API.getPostsByUser(props.user).then((response) => {
@@ -63,7 +63,7 @@ export default function Home(props) {
               html={post.html}
               title={post.title}
               // body={post.body.blocks[0].text}
-              // handleDelete={handleDelete}
+              handleDelete={handleDelete}
             />
           ))}
         </Row>
