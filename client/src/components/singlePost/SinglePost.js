@@ -1,33 +1,51 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-
+import { useParams } from "react-router-dom";
+import API from '../../utils/API'
+import draftToHtml from "draftjs-to-html";
+import parse from "html-react-parser";
 
 export default function SinglePost() {
-  const location = useLocation();
-  const path = location.pathname.split("/")[2];
-  const [post, setPost] = useState({})
+  const { postId } = useParams()
+  
+  const [post, setPost] = useState({
+    author: "",
+    title: "",
+    createdAt: ""
+  })
+  const [body, setBody] = useState("")
 
   const handleDelete = async () => {
     try {
-      await axios.delete("post/" + path)
+      await axios.delete("post/" + postId)
       window.location.replace('/')
     }catch (err){}
   };
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/posts/" + path);
-      setPost(res.data)
+      API.getPostById(postId)
+      .then(res => {
+        console.log(res)
+        setPost(res.data)
+      })
     };
     getPost();
-  }, [path]);
+  }, [postId]);
+
+  useEffect(() => {
+    if(post.author) {
+      const parsedBody = draftToHtml(JSON.parse(post.body))
+      setBody(parsedBody)
+    }
+  }, [post])
+
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">
-        {post.photo && (
+        {/* {post.photo && (
           <img className="singlePostImg" src={post.photo} alt="" />
-        )}
+        )} */}
         <h1 className="singlePostTitle">
           {post.title}
           <div>
@@ -37,11 +55,11 @@ export default function SinglePost() {
         </h1>
         <div className="singlePostInfo">
             <span className="Author">
-            Author: <b>{post.username}</b>
+            Author: <b>{post.author}</b>
             </span>
             <span className="singlePostDate">{new Date(post.createdAt).toDateString}</span>
         </div>
-        <p className="singlePostDesc">{post.desc}</p>
+        <p className="singlePostDesc">{body ? parse(body) : ""}</p>
       </div>
     </div>
   );

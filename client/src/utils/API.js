@@ -14,9 +14,19 @@ const API = {
         const blog = {
             body: post,
             title: info.title,
+            author: info.author,
             description: info.description
         }
         return axios.post(`/api/posts/submit/${userId}`, blog)
+    },
+    updateBlog: (post, info, postId) => {
+        const blog = {
+            body: post,
+            title: info.title,
+            author: info.author,
+            description: info.description
+        }
+        return axios.put(`/api/posts/submit/${postId}`, blog)
     },
     blogCategory: () => {
         return axios.get("/api/categories/")
@@ -24,6 +34,9 @@ const API = {
     newCategory: (name) => {
         return axios.post("/api/categories/", name)
     },
+    getPostById: (id) => {
+        return axios.get("/api/posts/" + id)
+    }
     
 }
 export default API

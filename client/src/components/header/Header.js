@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className="header">
       <div className="headerTitles">
-        <span className="headerTitleSm">Country & Culture</span>
+        <span className="headerTitleSm">Country & Culture Blog</span>
         <span className="headerTitleLg">Jamana</span>
       </div>
       <img className="headerImg" src={Image} alt="" />

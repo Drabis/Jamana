@@ -4,14 +4,18 @@ import axios from "axios";
 import { Card, Button, CardTitle, CardText, Row, Col } from "reactstrap";
 import parse from "html-react-parser";
 
-const CardPost = (props, handleDelete, updateBlog) => {
-  //  const handleDelete = async () => {
-  //    try {
-  //      await axios.delete("/post/id")
+const CardPost = (props, updateBlog) => {
+  const handleDelete = async () => {
+    try {
+      await axios.delete("/api/posts/" + props.id);
 
-  //      window.location.replace("/");
-  //    } catch (err) {}
-  //  };
+      props.handleDelete(props.id)
+    } catch (err) {}
+  };
+
+  // const getImage = category => {
+  //   // switch statement to return image based on category
+  // }
 
   return (
     <Row className="cardBody">
@@ -21,13 +25,22 @@ const CardPost = (props, handleDelete, updateBlog) => {
             X
           </i>
           <CardTitle tag="h5">{props.title}</CardTitle>
+          <CardTitle tag="h5">{props.author}</CardTitle>
+          {/* <img src={getImage(props.category)} /> */}
           <CardText>
-            {props.description ? parse(props.description) : ""}
+            {props.html && props.html.length > 10
+              ? parse(props.html.substring(0, 10) + "...")
+              : ""}
+            {props.html && props.html.length < 10
+              ? parse(props.html.substring(0, 10))
+              : ""}
           </CardText>
-          <Button className="button">Read more</Button>
-          <Button className="button" onClick={updateBlog}>
-            Update post
-          </Button>
+          <a href={"/post/" + props.id}>
+            <Button className="button">Read more</Button>
+          </a>
+          <a href={"/write/" + props.id}>
+            <Button className="button">Update post</Button>
+          </a>
         </Card>
       </Col>
     </Row>

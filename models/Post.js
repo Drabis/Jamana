@@ -6,6 +6,7 @@ const postSchema = new Schema(
     plainTextBody: String,
     // title: String,
     // description: String
+    author: String,
 
     title: {
       type: String,
@@ -27,8 +28,8 @@ const postSchema = new Schema(
       type: String,
       require: true,
     },
-    categories: {
-      type: Array,
+    category: {
+      type: String,
       require: false,
     },
   },

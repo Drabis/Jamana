@@ -21,6 +21,12 @@ router.post("/submit/:id", async (req, res) => {
     });
 });
 
+router.put("/submit/:id", async (req, res) => {
+  Post.findOneAndUpdate({ _id: req.params.id }, req.body)
+  .then(data => res.json(data))
+  .catch(err => res.status(422).json(err))
+})
+
 router.get("/user/:id", async (req, res) => {
   User.find({ _id: req.params.id })
     .populate("posts")
@@ -31,7 +37,16 @@ router.get("/user/:id", async (req, res) => {
       res.json(err);
     });
 });
+// GETTING INDIVIDUAL POST
 
+router.get("/:id", async (req, res) => {
+  try{
+    const post = await Post.findById(req.params.id);
+    res.status(200).json(post)
+  }catch(err){
+    res.status(500).json(err);
+  }
+})
 // UPDATE
 router.put("/user/:id", async (req, res) => {
   try {
@@ -59,7 +74,8 @@ router.put("/user/:id", async (req, res) => {
   }
 })
 // DELETE
-router.delete("/user/:id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
+  console.log("hello")
   try {
     const post = await Post.findById(req.params.id);
     if (post.username === req.body.username) {
