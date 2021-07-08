@@ -1,13 +1,13 @@
 .write{
-   margin-top: 30px;
+   margin-top: 10%;
    margin-left: 15%;
     padding: 30px;
     align-content: center;
+    /* text-align: center; */
     font-family: 'Otomanopee One', sans-serif;
     box-sizing: border-box;
     border-style: inset;
     border-bottom-style: groove;
-    
     width: 70%;
 }
 .postBtn {
@@ -18,4 +18,11 @@
     width: 70px;
     align-items: flex-end;
     margin: 10px 0px 0px 90%;   
+}
+
+.title {
+    font-family: 'Otomanopee One', sans-serif;
+    font-style: italic;
+    font-weight: bolder;
+    
 }

@@ -13,12 +13,14 @@ const CardPost = (props) => {
     } catch (err) {}
   };
 
-  const getImage = (category) => {
+  const getImage = () => {
+    
+    console.log(props)
     //   // switch statement to return image based on category
     let img;
-    switch (category) {
+    switch (props.category) {
       case "Music":
-        img = "Music";
+        img = process.env.PUBLIC_URL + "/assets/images/music/yash.jpg";
         break;
       case "Food":
         img = "food";
@@ -32,9 +34,10 @@ const CardPost = (props) => {
       case "Culture":
         img = "Culture";
         break;
-      default:
-        alert("please select a category!");
+        default:
     }
+    console.log(img)
+    return img;
   };
 
   return (
@@ -44,6 +47,8 @@ const CardPost = (props) => {
           <i className="deleteIcon" onClick={handleDelete}>
             X
           </i>
+          <img src={getImage()} alt=""/>
+
           <CardTitle tag="h5">{props.title}</CardTitle>
           <CardTitle tag="h5">{props.author}</CardTitle>
           {/* <img src={getImage(props.category)} /> */}

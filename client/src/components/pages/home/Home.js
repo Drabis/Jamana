@@ -55,7 +55,7 @@ export default function Home(props) {
             <CardPost
               key={post._id}
               id={post._id}
-              image={post.img}
+              category={post.category}
               author={post.author}
               // description={post.body ? post.body.getPlainText() : ""}
               html={post.html}

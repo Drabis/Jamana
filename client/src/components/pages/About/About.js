@@ -9,8 +9,8 @@ export default function About() {
       </h1>
       <main>
         <p>
-          This is an installable Blogging app that lets a user delve into a
-          topic of choice and write a blog post, or read one of the already
+          This is a Blog app that lets a user share their experiences, your thoughts with the african cultures, countries, in somme with the continent of Africa.
+          User can write a blog post, or read one of the already
           uploaded Blog posts.
         </p>
         <p>
