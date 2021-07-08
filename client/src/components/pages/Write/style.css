@@ -1,3 +1,15 @@
+.write{
+   margin-top: 30px;
+   margin-left: 15%;
+    padding: 30px;
+    align-content: center;
+    font-family: 'Otomanopee One', sans-serif;
+    box-sizing: border-box;
+    border-style: inset;
+    border-bottom-style: groove;
+    
+    width: 70%;
+}
 .postBtn {
     background-color: turquoise;
     padding: 10px;
