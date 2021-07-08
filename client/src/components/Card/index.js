@@ -14,29 +14,28 @@ const CardPost = (props) => {
   };
 
   const getImage = () => {
-    
-    console.log(props)
-    //   // switch statement to return image based on category
+    console.log(props);
+    // switch statement to return image based on category
     let img;
     switch (props.category) {
       case "Music":
-        img = process.env.PUBLIC_URL + "/assets/images/music/yash.jpg";
+        img = process.env.PUBLIC_URL + "/assets/images/music/drums.jpg";
         break;
       case "Food":
-        img = "food";
+        img = process.env.PUBLIC_URL + "/assets/images/food/salmon.jpg";
         break;
       case "Sport":
-        img = "Sport";
+        img = process.env.PUBLIC_URL + "/assets/images/sport/football.jpg";
         break;
       case "Life":
-        img = "Life";
+        img = process.env.PUBLIC_URL + "/assets/images/culture/yash.jpg";
         break;
       case "Culture":
-        img = "Culture";
+        img = process.env.PUBLIC_URL + "/assets/images/life/amani.jpg";
         break;
-        default:
+      default:
     }
-    console.log(img)
+
     return img;
   };
 
@@ -47,8 +46,7 @@ const CardPost = (props) => {
           <i className="deleteIcon" onClick={handleDelete}>
             X
           </i>
-          <img src={getImage()} alt=""/>
-
+          <img className="photo" src={getImage()} alt="" />
           <CardTitle tag="h5">{props.title}</CardTitle>
           <CardTitle tag="h5">{props.author}</CardTitle>
           {/* <img src={getImage(props.category)} /> */}

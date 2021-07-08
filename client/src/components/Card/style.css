@@ -6,9 +6,10 @@ html {
   margin: auto;
   padding: 25px;
   width: 70%;
-  
-  
 }
+/* .photo {
+  width: 500px;
+} */
 .cardBody:hover {
   width: 71%;
   box-shadow: 10px 3px 10px 3px rgba(44, 44, 70, 0.2);
@@ -24,7 +25,6 @@ html {
 }
 .button {
   background-color: rgb(8, 163, 224);
-  
   border: 1px solid;
   padding: 7px 14px;
   border-radius: 5px;
