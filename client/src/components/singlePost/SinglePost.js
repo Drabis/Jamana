@@ -11,9 +11,9 @@ export default function SinglePost(props) {
   const { postId } = useParams();
 
   const [post, setPost] = useState({
+    
     author: "",
     title: "",
-    createdAt: "",
   });
   const [body, setBody] = useState("");
 
@@ -48,9 +48,6 @@ export default function SinglePost(props) {
       <div className="singlePostInfo">
         <span className="Author">
           Author: <b>{post.author}</b>
-        </span>
-        <span className="singlePostDate">
-          {new Date(post.createdAt).toDateString}
         </span>
       </div>
       <p className="singlePostDesc">{body ? parse(body) : ""}</p>

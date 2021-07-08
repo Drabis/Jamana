@@ -1,9 +1,22 @@
-.login {
+/* .login {
   height: calc(100vh -50px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+} */
+.login {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../../../assets/images/loginBG.jpeg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .loginTitle {
   font-size: 50px;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./style.css";
 import axios from "axios";
 import { Card, Button, CardTitle, CardText, Row, Col } from "reactstrap";
@@ -51,11 +51,11 @@ const CardPost = (props) => {
           <CardTitle tag="h5">{props.author}</CardTitle>
           {/* <img src={getImage(props.category)} /> */}
           <CardText>
-            {props.html && props.html.length > 10
-              ? parse(props.html.substring(0, 10) + "...")
+            {props.html && props.html.length > 20
+              ? parse(props.html.substring(0, 20) + "...")
               : ""}
-            {props.html && props.html.length < 10
-              ? parse(props.html.substring(0, 10))
+            {props.html && props.html.length < 20
+              ? parse(props.html.substring(0, 20))
               : ""}
           </CardText>
           <a href={"/post/" + props.id}>

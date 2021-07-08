@@ -1,9 +1,23 @@
-.register {
+/* .register {
   height: calc(100vh -50px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+} */
+
+.register {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../../../assets/images/registerBG.jpeg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .registerTitle {
   font-size: 50px;

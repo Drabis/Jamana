@@ -1,11 +1,11 @@
-.about {
-    margin-top: 20px;
-    height: 600px;
+.about { 
+    height: 700px;
     color: white;
     font-size: larger;
-    background: #07a0ff;
+    background: #596770;
     border-radius: 0.4em;
-    padding: 1em;
+    padding: 35px;
+    padding-top: 10%;
     -webkit-box-shadow: 3px 4px 5px -1px rgba(0, 81, 186, 1);
     -moz-box-shadow: 3px 4px 5px -1px rgba(0, 81, 186, 1);
     box-shadow: 3px 4px 5px -1px rgba(0, 81, 186, 1);

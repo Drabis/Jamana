@@ -15,7 +15,7 @@ export default function About() {
         </p>
         <p>
           In order to write your very own Blog post, you can conveniently login
-          using one of your social accounts, and start penning your thoughts!
+          or create a user account, and start penning your thoughts and sharing your experiences!
         </p>
         <p>
           You can edit your Blog post at any time, as long as you're logged in.
@@ -23,12 +23,8 @@ export default function About() {
           your thoughts, you can also delete it at any instant of time.
         </p>
         <hr className="gold-hr" />
-        <p>
-          If you ever feel the need to provide criticism or drop a suggestion,
-          or if you just want to say "Nice job", feel free to contact me using
-          the links in the footer
-          <span className="full-stop">.</span>
-        </p>
+    
+       
       </main>
     </div>
   );
