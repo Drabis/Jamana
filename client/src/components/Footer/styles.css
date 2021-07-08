@@ -1,8 +1,8 @@
-.sidebar {
+.footer {
     margin: 20px;
     padding: 30;
     width: 99%;
-    background-color: #fdfbfb;
+    background: #07a0ff;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -13,12 +13,12 @@
 .aboutImg{
     width: 300px;
 }
-.sidebarItem{
+.footerItem{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.sidebarTitle{
+.footerTitle{
     margin: 10px;
     padding: 5px;
     width: 80%;
@@ -32,14 +32,14 @@
     text-align: center;
 }
 
-/* .sidebarItem > p{
+/* .footerItem > p{
     padding: 30;
 } */
-.sidebarList{
+.footerList{
     list-style: none;
     margin-bottom: 30px;
 }
-.sidebarListItem{
+.footerListItem{
     text-decoration: none;
     width: 50%;
     list-style: none;
@@ -47,7 +47,7 @@
     cursor: pointer;
     display: inline-block;
 }
-.sidebarSocial {
+.footerSocial {
     margin-top: 15px;
     width: 205px;
     align-items: center;

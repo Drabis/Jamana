@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Header from "../../header/Header";
-import SideBar from "../../sideBar/SideBar";
+import Header from "../../Header/Header";
+import SideBar from "../../Footer/Footer";
 import CardPost from "../../Card";
 import "./home.css";
 import API from "../../../utils/API";
 import { Row } from "reactstrap";
-import { convertFromRaw, convertToRaw } from "draft-js";
 import draftToHtml from "draftjs-to-html";
 
 export default function Home(props) {

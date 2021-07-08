@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import RichEditor from "../../RichEditor";
 import API from "../../../utils/API";
-import SideBar from "../../sideBar/SideBar";
+import SideBar from "../../Footer/Footer";
 import "./style.css";
 import { DropdownItem, DropdownToggle, ButtonDropdown } from "reactstrap";
 

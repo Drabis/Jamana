@@ -6,7 +6,7 @@ import Image from "../../assets/images/ivana.jpg";
 export default function TopBar(props) {
   
   return (
-    <div className="top">
+    <div className="top overflow-hidden">
       <div className="topLeft">
         <h1>Jamana</h1>
       </div>

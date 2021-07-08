@@ -6,15 +6,15 @@ html {
   margin: auto;
   padding: 25px;
   width: 70%;
+  
+  
+}
+.cardBody:hover {
+  width: 71%;
+  box-shadow: 10px 3px 10px 3px rgba(44, 44, 70, 0.2);
   transition: all 0.5s;
 }
-/* .postCard{
-    width: 100%;
-    max-width: 1000px;
-    display: inline-block;
-    border: solid black 1px;
-    background-color: burlywood; 
-} */
+
 .deleteIcon {
   color: lightcoral;
   cursor: pointer;

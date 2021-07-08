@@ -9,13 +9,33 @@ const CardPost = (props) => {
     try {
       await axios.delete("/api/posts/" + props.id);
 
-      props.handleDelete(props.id)
+      props.handleDelete(props.id);
     } catch (err) {}
   };
 
-  // const getImage = category => {
-  //   // switch statement to return image based on category
-  // }
+  const getImage = (category) => {
+    //   // switch statement to return image based on category
+    let img;
+    switch (category) {
+      case "Music":
+        img = "Music";
+        break;
+      case "Food":
+        img = "food";
+        break;
+      case "Sport":
+        img = "Sport";
+        break;
+      case "Life":
+        img = "Life";
+        break;
+      case "Culture":
+        img = "Culture";
+        break;
+      default:
+        alert("please select a category!");
+    }
+  };
 
   return (
     <Row className="cardBody">
