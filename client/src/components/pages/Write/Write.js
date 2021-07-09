@@ -31,7 +31,7 @@ export default function Write(props) {
           title: response.data.title,
           author: response.data.author,
         });
-        setCategorySelection(response.data.category)
+        setCategorySelection(response.data.categ)
       });
     } else {
       setParse({});
@@ -84,6 +84,8 @@ export default function Write(props) {
             <DropdownItem onClick={handleCatselection}>Food</DropdownItem>
             <DropdownItem onClick={handleCatselection}>Culture</DropdownItem>
             <DropdownItem onClick={handleCatselection}>Sport</DropdownItem>
+            <DropdownItem onClick={handleCatselection}>City</DropdownItem>
+            
           </DropdownMenu>
         </Dropdown>
         <p>{categorySelection}</p>

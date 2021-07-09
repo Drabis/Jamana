@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import TopBar from "./components/TopBar/TopBar";
+import TopBar from "./components/topbar/TopBar";
 import Home from "./components/pages/Home/Home";
 import Write from "./components/pages/Write/Write";
 import SigninPage from "./components/pages/Signin/SigninPage";
 import RegisterPage from "./components/pages/Register/RegisterPage";
 import SinglePost from "./components/singlePost/SinglePost";
 import About from "./components/pages/About/About";
-import Contact from "./components/pages/Contact/Contact"; 
+import Contact from "./components/pages/Contact/Contact";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 

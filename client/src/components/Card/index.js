@@ -33,6 +33,8 @@ const CardPost = (props) => {
       case "Culture":
         img = process.env.PUBLIC_URL + "/assets/images/life/amani.jpg";
         break;
+      case "City":
+        img = process.env.PUBLIC_URL + "/assets/images/city/marakesh.jpeg";
       default:
     }
 
@@ -69,7 +71,7 @@ const CardPost = (props) => {
             <Button variant="info" onClick={""}>
               +
             </Button>
-              {}
+            {}
             <Button variant="info" onClick={""}>
               -
             </Button>

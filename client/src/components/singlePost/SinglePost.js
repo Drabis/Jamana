@@ -14,17 +14,7 @@ export default function SinglePost(props) {
     author: "",
     description: "",
   });
-  console.log(`initial ${post}`);
   const [body, setBody] = useState("");
-  // const [posts, setPosts] = useState([]);
-
-  ///////////
-
-  // const handleDelete = (id) => {
-  //   console.log(`this is new ${post}`);
-  //   const newPost = posts.filter((post) => post._id !== id);
-  //   setPosts(newPost);
-  // };
 
   const handleDelete = async () => {
     try {
@@ -33,7 +23,6 @@ export default function SinglePost(props) {
       history.push("/");
     } catch (err) {}
   };
-  ///////////
 
   useEffect(() => {
     const getPost = async () => {
@@ -52,9 +41,43 @@ export default function SinglePost(props) {
     }
   }, [post]);
 
+
+  const getImage = () => {
+    console.log(props);
+    // switch statement to return image based on category
+    let img;
+    switch (post.category) {
+      case "Music":
+        img = process.env.PUBLIC_URL + "/assets/images/music/drums.jpg";
+        break;
+      case "Food":
+        img = process.env.PUBLIC_URL + "/assets/images/food/salmon.jpg";
+        break;
+      case "Sport":
+        img = process.env.PUBLIC_URL + "/assets/images/sport/football.jpeg";
+        break;
+      case "Life":
+        img = process.env.PUBLIC_URL + "/assets/images/culture/yash.jpg";
+        break;
+      case "Culture":
+        img = process.env.PUBLIC_URL + "/assets/images/life/amani.jpg";
+        break;
+      case "City":
+        img = process.env.PUBLIC_URL + "/assets/images/city/marakesh.jpeg";
+      default:
+    }
+
+    return img;
+  };
+
+
   return (
     <div className="singlePost">
       <h1 className="singlePostTitle">{post.title}</h1>
+
+      {/* POPULATE THE IMAGE HERE */}
+      <img src={getImage()} />
+
       <div className="singlePostInfo">
         <span className="Author">
           Author: <b>{post.author}</b>
@@ -62,12 +85,12 @@ export default function SinglePost(props) {
       </div>
       <p className="singlePostDesc">{body ? parse(body) : ""}</p>
       <div>
-        <a href={"/write/" + postId}>
+        <a className="anchor" href={"/write/" + postId}>
           <i className="singlePostIcon far fa-edit"></i>
         </a>
 
         <i
-          className="singlePostIcon far fa-trash-alt"
+          className="singleDelPostIcon far fa-trash-alt"
           onClick={handleDelete}
         ></i>
       </div>
