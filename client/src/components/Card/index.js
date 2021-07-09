@@ -25,7 +25,7 @@ const CardPost = (props) => {
         img = process.env.PUBLIC_URL + "/assets/images/food/salmon.jpg";
         break;
       case "Sport":
-        img = process.env.PUBLIC_URL + "/assets/images/sport/football.jpg";
+        img = process.env.PUBLIC_URL + "/assets/images/sport/football.jpeg";
         break;
       case "Life":
         img = process.env.PUBLIC_URL + "/assets/images/culture/yash.jpg";
@@ -64,6 +64,16 @@ const CardPost = (props) => {
           <a href={"/write/" + props.id}>
             <Button className="button">Update post</Button>
           </a>
+          <div className="rating">
+            <span>Rate this post:</span>
+            <Button variant="info" onClick={""}>
+              +
+            </Button>
+              {}
+            <Button variant="info" onClick={""}>
+              -
+            </Button>
+          </div>
         </Card>
       </Col>
     </Row>

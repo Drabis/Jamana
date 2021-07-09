@@ -8,8 +8,7 @@ export default function Footer() {
       <div className="footerItem">
         <span className="footerTitle">ABOUT US</span>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolore
-          saepe nisi minus vel atque itaque ab repellendus sequi sit ipsa.
+          Your favorite Blog that allow you to share your experiences of Africa.
         </p>
         <span className="footerTitle">CATEGORIES</span>
         <ul>
@@ -18,7 +17,7 @@ export default function Footer() {
           <li className="footerListItem"> Music</li>
           <li className="footerListItem"> Sport</li>
           <li className="footerListItem"> Food</li>
-          <li className="footerListItem"> Social</li>
+          <li className="footerListItem"> Places</li>
         </ul>
         <span className="footerTitle">FOLLOW US</span>
         <div className="footerSocial">

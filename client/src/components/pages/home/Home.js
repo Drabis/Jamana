@@ -6,6 +6,7 @@ import "./home.css";
 import API from "../../../utils/API";
 import { Row } from "reactstrap";
 import draftToHtml from "draftjs-to-html";
+import Slider from "../../slider/Slider";
 
 export default function Home(props) {
   const [posts, setPosts] = useState([]);
@@ -48,7 +49,8 @@ export default function Home(props) {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+      <Slider />
       <div className="home">
         <Row>
           {post1.map((post) => (
