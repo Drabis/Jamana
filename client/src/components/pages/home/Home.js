@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Header from "../../Header/Header";
 import SideBar from "../../Footer/Footer";
 import CardPost from "../../Card";
 import "./home.css";
