@@ -41,7 +41,6 @@ export default function SinglePost(props) {
     }
   }, [post]);
 
-
   const getImage = () => {
     console.log(props);
     // switch statement to return image based on category
@@ -70,13 +69,12 @@ export default function SinglePost(props) {
     return img;
   };
 
-
   return (
     <div className="singlePost">
       <h1 className="singlePostTitle">{post.title}</h1>
 
       {/* POPULATE THE IMAGE HERE */}
-      <img src={getImage()} />
+      <img src={getImage()} alt="" />
 
       <div className="singlePostInfo">
         <span className="Author">

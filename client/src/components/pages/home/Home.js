@@ -40,10 +40,10 @@ export default function Home(props) {
       if (post.body) {
         post.html = draftToHtml(JSON.parse(post.body));
       }
-      // if (post.body) post.body = convertFromRaw(post.body)
+
     });
     setPost1(postList);
-    // setPost2(secondPosts);
+    
   };
 
   return (
@@ -57,10 +57,8 @@ export default function Home(props) {
               id={post._id}
               category={post.category}
               author={post.author}
-              // description={post.body ? post.body.getPlainText() : ""}
               html={post.html}
               title={post.title}
-              // body={post.body.blocks[0].text}
               handleDelete={handleDelete}
             />
           ))}

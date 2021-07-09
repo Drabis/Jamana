@@ -1,11 +1,7 @@
 .footer {
-    margin: 20px;
-    padding: 30;
-    width: 99%;
+    width: 100%;
     background: #07a0ff;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
 
 }
