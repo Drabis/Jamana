@@ -31,6 +31,7 @@ export default function Write(props) {
           title: response.data.title,
           author: response.data.author,
         });
+        setCategorySelection(response.data.category)
       });
     } else {
       setParse({});

@@ -21,9 +21,10 @@ const API = {
         }
         return axios.post(`/api/posts/submit/${userId}`, blog)
     },
-    updateBlog: (post, info, postId) => {
+    updateBlog: (post, info, category, postId) => {
         const blog = {
             body: post,
+            category: category,
             title: info.title,
             author: info.author,
             description: info.description

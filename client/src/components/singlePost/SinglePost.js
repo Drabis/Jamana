@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import API from "../../utils/API";
 import draftToHtml from "draftjs-to-html";
 import parse from "html-react-parser";
@@ -8,7 +8,7 @@ import "./singlePost.css";
 
 export default function SinglePost(props) {
   const { postId } = useParams();
-
+  const history = useHistory();
   const [post, setPost] = useState({
     title: "",
     author: "",
@@ -26,13 +26,13 @@ export default function SinglePost(props) {
   //   setPosts(newPost);
   // };
 
-    const handleDelete = async () => {
-      try {
-        await axios.delete("/api/posts/" + postId);
+  const handleDelete = async () => {
+    try {
+      await axios.delete("/api/posts/" + postId);
 
-        props.handleDelete(props.id);
-      } catch (err) {}
-    };
+      history.push("/");
+    } catch (err) {}
+  };
   ///////////
 
   useEffect(() => {
