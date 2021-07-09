@@ -49,7 +49,6 @@ export default function Home(props) {
 
   return (
     <>
-      {/* <Header /> */}
       <Slider />
       <div className="home">
         <Row>
