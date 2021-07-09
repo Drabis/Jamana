@@ -10,7 +10,7 @@ const API = {
     getPostsByUser: userId => {
         return axios.get(`/api/posts/user/${userId}`)
     },
-    submitBlog: (post, info, category, userId, Date) => {
+    submitBlog: (post, info, category, userId) => {
         const blog = {
             body: post,
             title: info.title,
@@ -28,6 +28,8 @@ const API = {
             author: info.author,
             description: info.description
         }
+        console.log(blog)
+       
         return axios.put(`/api/posts/submit/${postId}`, blog)
     },
     blogCategory: () => {

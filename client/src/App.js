@@ -6,6 +6,7 @@ import SigninPage from "./components/pages/Signin/SigninPage";
 import RegisterPage from "./components/pages/Register/RegisterPage";
 import SinglePost from "./components/singlePost/SinglePost";
 import About from "./components/pages/About/About";
+import Contact from "./components/pages/Contact/Contact"; 
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -37,6 +38,10 @@ function App() {
             <SigninPage handleUserSignin={handleUserSignin} />
           )}
         </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
+
         <Route path="/about">
           <About />
         </Route>

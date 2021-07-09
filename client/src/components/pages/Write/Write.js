@@ -43,6 +43,7 @@ export default function Write(props) {
   };
   const handlePostSubmit = () => {
     if (postId) {
+      console.log(`testing ${postId}`);
       API.updateBlog(blog, blogInfo, categorySelection, postId).then(() => {
         history.push("/");
       });
@@ -55,15 +56,14 @@ export default function Write(props) {
 
   const updateBlog = (input) => {
     const raw = JSON.stringify(convertToRaw(input));
-    console.log(raw);
     setBlog(raw);
   };
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const handleCatselection = (e) => {
-    setCategorySelection(e.target.textContent)
-  }
+    setCategorySelection(e.target.textContent);
+  };
 
   return (
     <Row>

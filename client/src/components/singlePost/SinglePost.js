@@ -4,26 +4,36 @@ import { useParams } from "react-router-dom";
 import API from "../../utils/API";
 import draftToHtml from "draftjs-to-html";
 import parse from "html-react-parser";
-import "./singlePost.css"
-
+import "./singlePost.css";
 
 export default function SinglePost(props) {
   const { postId } = useParams();
 
   const [post, setPost] = useState({
-    
-    author: "",
     title: "",
+    author: "",
+    description: "",
   });
+  console.log(`initial ${post}`);
   const [body, setBody] = useState("");
+  // const [posts, setPosts] = useState([]);
 
-  const handleDelete = async () => {
-    try {
-      await axios.delete("/api/posts/" + props.id);
+  ///////////
 
-      props.handleDelete(props.id);
-    } catch (err) {}
-  };
+  // const handleDelete = (id) => {
+  //   console.log(`this is new ${post}`);
+  //   const newPost = posts.filter((post) => post._id !== id);
+  //   setPosts(newPost);
+  // };
+
+    const handleDelete = async () => {
+      try {
+        await axios.delete("/api/posts/" + postId);
+
+        props.handleDelete(props.id);
+      } catch (err) {}
+    };
+  ///////////
 
   useEffect(() => {
     const getPost = async () => {
@@ -52,9 +62,10 @@ export default function SinglePost(props) {
       </div>
       <p className="singlePostDesc">{body ? parse(body) : ""}</p>
       <div>
-        <a href={"/write/" + props.id}>
+        <a href={"/write/" + postId}>
           <i className="singlePostIcon far fa-edit"></i>
         </a>
+
         <i
           className="singlePostIcon far fa-trash-alt"
           onClick={handleDelete}
