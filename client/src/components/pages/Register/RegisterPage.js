@@ -7,21 +7,20 @@ import API from "../../../utils/API";
 export default function SigninPage(props) {
   let history = useHistory()
   const [formInput, setFormInput] = useState({})
+  
 const handleInputChange = (e) => {
   setFormInput({...formInput, [e.target.name]: e.target.value})
   console.log(formInput)
 }
 const handleRegister = (e) => {
   e.preventDefault()
-  API.registerUser(formInput).then(response => {
-    if (response.status === 200) {
-    props.handleUserSignin()
-    history.push("/")
-    }
-    if (response.status === 400) {
-      // failed registration
-    }
-  })
+  API.registerUser(formInput)
+    .then((response) => {
+      if (response.status === 200) {
+        props.handleUserSignin();
+        history.push("/");
+      }
+    })
 }
 
   return (

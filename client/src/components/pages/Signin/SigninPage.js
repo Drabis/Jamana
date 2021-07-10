@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./login.css";
 import { Link, useHistory } from "react-router-dom";
 import API from "../../../utils/API";
@@ -6,24 +6,26 @@ import API from "../../../utils/API";
 export default function SigninPage(props) {
   let history = useHistory();
   const [formInput, setFormInput] = useState({});
+  // const [validation, setValidation] = useState({name:false, email: false});
+  const [errorMessage, setErrorMessage] = useState(false);
+
   const handleInputChange = (e) => {
     setFormInput({ ...formInput, [e.target.name]: e.target.value });
-    console.log(formInput);
   };
   const handleSignin = (e) => {
     e.preventDefault();
-    API.signinUser(formInput).then((response) => {
-      console.log(response);
-      if (response.status === 200) {
-        props.handleUserSignin(response.data.user._id);
-        history.push("/");
-      }
-      if (response.status === 400) {
-        alert("Please enter the correct information");
-      }
-      history.push("/");
-    });
+    API.signinUser(formInput)
+      .then((response) => {
+        if (response.status === 200) {
+          props.handleUserSignin(response.data.user._id);
+          history.push("/");
+        }
+      })
+      .catch((err) => {
+        setErrorMessage("Incorrect email or password, please try again");
+      });
   };
+
   return (
     <div className="login">
       <span className="loginTitle">Login</span>
@@ -35,6 +37,7 @@ export default function SigninPage(props) {
           typetype="text"
           placeholder="Enter your email"
         />
+        {errorMessage && <div className="error">{errorMessage}</div>}
         <label>Password</label>
         <input
           name="password"

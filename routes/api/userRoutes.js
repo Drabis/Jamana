@@ -25,10 +25,7 @@ router.post("/signin", async (req, res) => {
     const userData = await User.findOne({ email: req.body.email });
 
     if (!userData) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password, please try again" });
-      return;
+      return res.status(400).json({ message: "Incorrect email or password, please try again" });
     }
 
     const validPassword = await userData.comparePassword(req.body.password);
