@@ -8,6 +8,11 @@
     align-items: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+.titleLink, .titleLink:hover{
+    text-decoration: none;
+    color: initial;
+}
 .topLeft{
     font-family: 'Big Shoulders Stencil Display', cursive;
     font-style: italic;

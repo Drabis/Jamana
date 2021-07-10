@@ -8,14 +8,22 @@ export default function TopBar(props) {
   return (
     <div className="top overflow-hidden">
       <div className="topLeft">
-        <h1>Jamana</h1>
+        <h1>
+          {props.user ? (
+            <Link className="titleLink" to="/">
+              Jamana
+            </Link>
+          ) : null}
+        </h1>
       </div>
       <div className="topCenter">
         <ul className="topList">
           <li className="topListItem">
-           {props.user ? <Link className="link" to="/">
-              HOME
-            </Link> : null }
+            {props.user ? (
+              <Link className="link" to="/">
+                HOME
+              </Link>
+            ) : null}
           </li>
           <li className="topListItem">
             <Link className="link" to="/about">
@@ -28,11 +36,17 @@ export default function TopBar(props) {
             </Link>
           </li>
           <li className="topListItem">
-            {props.user ? <Link className="link" to="/write">
-              WRITE
-            </Link> : null }
+            {props.user ? (
+              <Link className="link" to="/write">
+                WRITE
+              </Link>
+            ) : null}
           </li>
-          {props.user ? <li onClick={props.logout} className="topListItem">LOGOUT</li> : null }
+          {props.user ? (
+            <li onClick={props.logout} className="topListItem">
+              LOGOUT
+            </li>
+          ) : null}
         </ul>
       </div>
       <div className="topRight">

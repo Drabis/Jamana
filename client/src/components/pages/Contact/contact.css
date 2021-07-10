@@ -1,0 +1,31 @@
+.contact { 
+    height: 700px;
+    color: white;
+    font-size: larger;
+    background: #596770;
+    border-radius: 0.4em;
+    padding: 35px;
+    padding-top: 10%;
+    -webkit-box-shadow: 3px 4px 5px -1px rgba(0, 81, 186, 1);
+    -moz-box-shadow: 3px 4px 5px -1px rgba(0, 81, 186, 1);
+    box-shadow: 3px 4px 5px -1px rgba(0, 81, 186, 1);
+    z-index: 1;
+}
+.full-stop {
+    color: rgb(255, 251, 0);
+    text-shadow: 2px 1px 2px rgba(255, 179, 0, 1);
+}
+.gold-hr {
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgb(255, 251, 0),
+            rgba(0, 0, 0, 0));
+}
+.sideIcon1{
+    font-size: 40px;
+    margin: 10px;
+    color: white;
+    cursor: pointer;
+}
