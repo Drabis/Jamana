@@ -7,11 +7,29 @@ import API from "../../../utils/API";
 export default function SigninPage(props) {
   let history = useHistory()
   const [formInput, setFormInput] = useState({})
+  const [validator, setValidator] = useState({email:false, name:false});
+  
   
 const handleInputChange = (e) => {
-  setFormInput({...formInput, [e.target.name]: e.target.value})
-  console.log(formInput)
+  const targetName = e.target.name
+  switch(targetName){
+    case 'email': 
+     const emailCheck = /.+@.+\..+/;
+    if (emailCheck.test(e.target.value)) {
+      setFormInput({ ...formInput, [e.target.name]: e.target.value });
+    } else {
+      setValidator({ ...validator, email: true });
+    }
+      break;
+      case 'password': 
+        break
+    default: return
+  }
+  
+    
+  
 }
+
 const handleRegister = (e) => {
   e.preventDefault()
   API.registerUser(formInput)
@@ -41,6 +59,7 @@ const handleRegister = (e) => {
           type="text"
           placeholder="Enter your email"
         />
+        {validator.email && <div>Enter a valid email</div>}
         <label>Password</label>
         <input
           name="password"
@@ -48,7 +67,11 @@ const handleRegister = (e) => {
           type="password"
           placeholder="Enter your password"
         />
-        <button onClick={handleRegister} className="registerButton">register</button>
+        {validator.password && <div>Enter a valid email</div>}
+
+        <button onClick={handleRegister} className="registerButton">
+          register
+        </button>
       </form>
       <button className="registerLoginButon">
         <Link className="link" to="/signin">
