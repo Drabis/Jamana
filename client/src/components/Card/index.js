@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import axios from "axios";
 import { Card, Button, CardTitle, CardText, Row, Col } from "reactstrap";
@@ -11,6 +11,20 @@ const CardPost = (props) => {
 
       props.handleDelete(props.id);
     } catch (err) {}
+  };
+  // HANDLE RATING
+  const [rating, setRating] = useState(0);
+
+  const handleDecrement = () => {
+    let count = rating;
+    count--;
+    setRating(count);
+  };
+
+  const handleIncrement = () => {
+    let count = rating;
+    count++;
+    setRating(count);
   };
 
   const getImage = () => {
@@ -67,13 +81,13 @@ const CardPost = (props) => {
             <Button className="button">Update post</Button>
           </a>
           <div className="rating">
-            <span>Rate this post:</span>
-            <Button variant="info" onClick={""}>
-              +
-            </Button>
-            {}
-            <Button variant="info" onClick={""}>
+            <span>Rate post:</span>
+            <Button variant="info" onClick={handleDecrement}>
               -
+            </Button>
+            <span>{rating}</span>
+            <Button variant="info" onClick={handleIncrement}>
+              +
             </Button>
           </div>
         </Card>

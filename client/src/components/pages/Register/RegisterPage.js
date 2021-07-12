@@ -1,45 +1,44 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./register.css";
 import { Link, useHistory } from "react-router-dom";
 import API from "../../../utils/API";
 
-
 export default function SigninPage(props) {
-  let history = useHistory()
-  const [formInput, setFormInput] = useState({})
-  const [validator, setValidator] = useState({email:false, name:false});
-  
-  
-const handleInputChange = (e) => {
-  const targetName = e.target.name
-  switch(targetName){
-    case 'email': 
-     const emailCheck = /.+@.+\..+/;
-    if (emailCheck.test(e.target.value)) {
-      setFormInput({ ...formInput, [e.target.name]: e.target.value });
-    } else {
-      setValidator({ ...validator, email: true });
-    }
-      break;
-      case 'password': 
-        break
-    default: return
-  }
-  
-    
-  
-}
+  let history = useHistory();
+  const [formInput, setFormInput] = useState({});
+  const [validator, setValidator] = useState({ email: false, name: false });
 
-const handleRegister = (e) => {
-  e.preventDefault()
-  API.registerUser(formInput)
-    .then((response) => {
+  const handleInputChange = (e) => {
+    const targetName = e.target.name;
+    switch (targetName) {
+      case "email":
+        const emailCheck = new RegExp(
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        );
+        console.log(emailCheck.test(e.target.value))
+        if (emailCheck.test(e.target.value)) {
+          setFormInput({ ...formInput, [e.target.name]: e.target.value });
+          setValidator({ ...validator, email: false });
+        } else {
+          setValidator({ ...validator, email: true });
+        }
+        break;
+      case "password":
+        break;
+      default:
+        return;
+    }
+  };
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    API.registerUser(formInput).then((response) => {
       if (response.status === 200) {
         props.handleUserSignin();
         history.push("/");
       }
-    })
-}
+    });
+  };
 
   return (
     <div className="register">
@@ -59,7 +58,7 @@ const handleRegister = (e) => {
           type="text"
           placeholder="Enter your email"
         />
-        {validator.email && <div>Enter a valid email</div>}
+        {validator.email && <div className="redText">Enter a valid email</div>}
         <label>Password</label>
         <input
           name="password"
@@ -67,7 +66,7 @@ const handleRegister = (e) => {
           type="password"
           placeholder="Enter your password"
         />
-        {validator.password && <div>Enter a valid email</div>}
+        {validator.password && <div>Enter a valid password</div>}
 
         <button onClick={handleRegister} className="registerButton">
           register
