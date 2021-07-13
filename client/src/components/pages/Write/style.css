@@ -1,14 +1,16 @@
 .write{
-   margin-top: 10%;
+   margin-top: 5%;
    margin-left: 15%;
+   margin-bottom: 5%;
     padding: 30px;
-    align-content: center;
-    /* text-align: center; */
+    /* align-content: center; */
     font-family: 'Otomanopee One', sans-serif;
     box-sizing: border-box;
     border-style: inset;
     border-bottom-style: groove;
     width: 70%;
+    border-radius: 10px;
+    box-shadow: 3px 3px rgb(58, 56, 56), -1em 0 .4em grey;
 }
 .postBtn {
     background-color: turquoise;
@@ -24,5 +26,5 @@
     font-family: 'Otomanopee One', sans-serif;
     font-style: italic;
     font-weight: bolder;
-    
 }
+

@@ -101,6 +101,7 @@ export default function Write(props) {
           POST
         </button>
       </div>
+      <Footer />
     </Row>
   );
 }

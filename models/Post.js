@@ -4,8 +4,6 @@ const postSchema = new Schema(
   {
     body: String,
     plainTextBody: String,
-    // title: String,
-    // description: String
     author: String,
 
     title: {
