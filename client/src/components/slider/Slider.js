@@ -26,7 +26,7 @@ const Slider = () => {
   return (
     <div className="slider">
       <div className="sliderTitles">
-        <span className="sliderSubTitle">Country & Culture</span>
+        <span className="sliderSubTitle">Country & Culture Blog</span>
         <span className="sliderTitle">Jamana</span>
       </div>
       <div
