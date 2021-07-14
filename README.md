@@ -9,7 +9,8 @@
 - [License](#license)
 - [Author](#Author)
 
-<img width="1122" alt="Screen Shot 2021-07-13 at 10 12 33 PM" src="https://user-images.githubusercontent.com/76567790/125549895-9498f555-e4e4-41c9-9e94-1ea915369729.png">
+<img width="1419" alt="Screen Shot 2021-07-14 at 11 30 33 AM" src="https://user-images.githubusercontent.com/76567790/125649648-74ed4240-f277-49d5-b96e-ac91ed004cfd.png">
+
 <img width="1425" alt="Screen Shot 2021-07-13 at 10 13 23 PM" src="https://user-images.githubusercontent.com/76567790/125549869-fb4adb5d-69bd-4441-9bf5-ab417bafab14.png">
 <img width="1132" alt="Screen Shot 2021-07-13 at 10 12 49 PM" src="https://user-images.githubusercontent.com/76567790/125549881-040a49c6-7fc9-4cc2-a8f9-56a4ac3a261e.png">
 
