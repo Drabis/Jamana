@@ -42,10 +42,10 @@ const CardPost = (props) => {
         img = process.env.PUBLIC_URL + "/assets/images/sport/football.jpeg";
         break;
       case "Life":
-        img = process.env.PUBLIC_URL + "/assets/images/culture/yash.jpg";
+        img = process.env.PUBLIC_URL + "/assets/images/life/children.jpeg";
         break;
       case "Culture":
-        img = process.env.PUBLIC_URL + "/assets/images/culture/amani.jpg";
+        img = process.env.PUBLIC_URL + "/assets/images/culture/yash.jpg";
         break;
       case "City":
         img = process.env.PUBLIC_URL + "/assets/images/city/marakesh.jpeg";

@@ -84,7 +84,8 @@ export default function Write(props) {
             <DropdownItem onClick={handleCatselection}>Food</DropdownItem>
             <DropdownItem onClick={handleCatselection}>Culture</DropdownItem>
             <DropdownItem onClick={handleCatselection}>Sport</DropdownItem>
-            <DropdownItem onClick={handleCatselection}>City</DropdownItem>
+            <DropdownItem onClick={handleCatselection}>Place</DropdownItem>
+            <DropdownItem onClick={handleCatselection}>Life</DropdownItem>
             
           </DropdownMenu>
         </Dropdown>
