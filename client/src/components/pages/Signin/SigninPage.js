@@ -8,9 +8,26 @@ export default function SigninPage(props) {
   const [formInput, setFormInput] = useState({});
   // const [validation, setValidation] = useState({name:false, email: false});
   const [errorMessage, setErrorMessage] = useState(false);
+  const [validator, setValidator] = useState({ email: false, name: false });
 
   const handleInputChange = (e) => {
     setFormInput({ ...formInput, [e.target.name]: e.target.value });
+    const targetName = e.target.name;
+    switch (targetName) {
+      case "email":
+        const emailCheck = new RegExp(
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        );
+        if (emailCheck.test(e.target.value)) {
+          setFormInput({ ...formInput, [e.target.name]: e.target.value });
+          setValidator({ ...validator, email: false });
+        } else {
+          setValidator({ ...validator, email: true });
+        }
+        break;
+      default:
+        return;
+    }
   };
   const handleSignin = (e) => {
     e.preventDefault();

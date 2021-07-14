@@ -8,9 +8,9 @@
 .login {
   background: linear-gradient(
       rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(253, 253, 253, 0.5)
     ),
-    url("../../../assets/images/loginBG.jpeg");
+    url("../../../assets/images/art.jpeg");
   background-size: cover;
   height: 100vh;
   display: flex;

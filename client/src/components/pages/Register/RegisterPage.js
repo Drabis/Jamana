@@ -15,15 +15,12 @@ export default function SigninPage(props) {
         const emailCheck = new RegExp(
           /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
         );
-        console.log(emailCheck.test(e.target.value))
         if (emailCheck.test(e.target.value)) {
           setFormInput({ ...formInput, [e.target.name]: e.target.value });
           setValidator({ ...validator, email: false });
         } else {
           setValidator({ ...validator, email: true });
         }
-        break;
-      case "password":
         break;
       default:
         return;

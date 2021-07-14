@@ -45,7 +45,7 @@ const CardPost = (props) => {
         img = process.env.PUBLIC_URL + "/assets/images/culture/yash.jpg";
         break;
       case "Culture":
-        img = process.env.PUBLIC_URL + "/assets/images/life/amani.jpg";
+        img = process.env.PUBLIC_URL + "/assets/images/culture/amani.jpg";
         break;
       case "City":
         img = process.env.PUBLIC_URL + "/assets/images/city/marakesh.jpeg";

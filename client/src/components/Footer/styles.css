@@ -1,8 +1,9 @@
 .footer {
     width: 100%;
-    background: #07a0ff;
+    /* background: #07a0ff; */
     border-radius: 10px;
     align-items: center;
+    background-image: url("../../assets/images/header.jpg");
 
 }
 
