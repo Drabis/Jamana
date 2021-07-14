@@ -13,7 +13,9 @@
 - To build a responsive fully functional Blog application that allows the users to save, retrieve and delete the post data.
 - Build the user profile page and post list so that it's easier for the user to review their post, and update or delete their post if they wish to.
 - Associate an image to the category post
-- build a single post page to view and read the entire post
+- build a single post page to view and read the entire post.
+
+App deployed on Heroku here: https://jamana101.herokuapp.com/
 
 ## Installation
 
