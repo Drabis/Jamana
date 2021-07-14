@@ -26,6 +26,8 @@ function App() {
   };
   const handleLogout = () => {
     setUser(false);
+    localStorage.clear();
+    window.location.href = "/signin";
   };
   return (
     <Router>
