@@ -67,11 +67,11 @@ const CardPost = (props) => {
           <CardTitle tag="h5">{props.author}</CardTitle>
           {/* <img src={getImage(props.category)} /> */}
           <CardText>
-            {props.html && props.html.length > 20
-              ? parse(props.html.substring(0, 20) + "...")
+            {props.html && props.html.length > 40
+              ? parse(props.html.substring(0, 40) + "...")
               : ""}
-            {props.html && props.html.length < 20
-              ? parse(props.html.substring(0, 20))
+            {props.html && props.html.length < 40
+              ? parse(props.html.substring(0, 40))
               : ""}
           </CardText>
           <a href={"/post/" + props.id}>
