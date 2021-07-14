@@ -9,6 +9,12 @@
 - [License](#license)
 - [Author](#Author)
 
+<img width="1122" alt="Screen Shot 2021-07-13 at 10 12 33 PM" src="https://user-images.githubusercontent.com/76567790/125549895-9498f555-e4e4-41c9-9e94-1ea915369729.png">
+<img width="1425" alt="Screen Shot 2021-07-13 at 10 13 23 PM" src="https://user-images.githubusercontent.com/76567790/125549869-fb4adb5d-69bd-4441-9bf5-ab417bafab14.png">
+<img width="1132" alt="Screen Shot 2021-07-13 at 10 12 49 PM" src="https://user-images.githubusercontent.com/76567790/125549881-040a49c6-7fc9-4cc2-a8f9-56a4ac3a261e.png">
+
+
+
 ## Project Objectives
 - To build a responsive fully functional Blog application that allows the users to save, retrieve and delete the post data.
 - Build the user profile page and post list so that it's easier for the user to review their post, and update or delete their post if they wish to.
