@@ -1,4 +1,4 @@
-# Back end e-commerce
+# Jamana blog app
 
 # Table of contents
 
