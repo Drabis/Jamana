@@ -47,7 +47,7 @@ const CardPost = (props) => {
       case "Culture":
         img = process.env.PUBLIC_URL + "/assets/images/culture/yash.jpg";
         break;
-      case "City":
+      case "Place":
         img = process.env.PUBLIC_URL + "/assets/images/city/marakesh.jpeg";
       default:
     }

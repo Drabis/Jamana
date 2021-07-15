@@ -9,7 +9,8 @@ export default function SigninPage(props) {
   const [validator, setValidator] = useState({ email: false, name: false });
 
   const handleInputChange = (e) => {
-    const targetName = e.target.name;
+    setFormInput({ ...formInput, [e.target.name]: e.target.value });
+    const targetName = e.target.name.value;
     switch (targetName) {
       case "email":
         const emailCheck = new RegExp(
