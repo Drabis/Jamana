@@ -28,6 +28,7 @@ const CardPost = (props) => {
   };
 
   const getImage = () => {
+
     // switch statement to return image based on category
     let img;
     switch (props.category) {
@@ -48,6 +49,7 @@ const CardPost = (props) => {
         break;
       case "Place":
         img = process.env.PUBLIC_URL + "/assets/images/city/marakesh.jpeg";
+        break;
       default:
     }
 
