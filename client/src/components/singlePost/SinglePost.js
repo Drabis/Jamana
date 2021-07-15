@@ -27,7 +27,6 @@ export default function SinglePost(props) {
   useEffect(() => {
     const getPost = async () => {
       API.getPostById(postId).then((res) => {
-        console.log(res);
         setPost(res.data);
       });
     };
@@ -42,7 +41,6 @@ export default function SinglePost(props) {
   }, [post]);
 
   const getImage = () => {
-    console.log(props);
     // switch statement to return image based on category
     let img;
     switch (post.category) {

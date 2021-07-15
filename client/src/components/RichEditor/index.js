@@ -22,15 +22,13 @@ const RichEditor = (props) => {
   }, [editorState]);
 
   useEffect(() => {
-    console.log(props.post);
     if (Object.keys(props.post).length > 0) {
       const content = convertFromRaw(props.post);
       const editor = EditorState.createWithContent(content);
       setEditorState(editor);
+    } else {
+      setEditorState(EditorState.createEmpty());
     }
-	else {
-		setEditorState(EditorState.createEmpty())
-	}
   }, [props.post]);
 
   const handleKeyCommand = (command) => {

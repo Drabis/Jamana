@@ -24,14 +24,13 @@ export default function Write(props) {
   useEffect(() => {
     if (postId) {
       API.getPostById(postId).then((response) => {
-        console.log(response);
         const parsePost = JSON.parse(response.data.body);
         setParse(parsePost);
         setBlogInfo({
           title: response.data.title,
           author: response.data.author,
         });
-        setCategorySelection(response.data.categ)
+        setCategorySelection(response.data.categ);
       });
     } else {
       setParse({});
@@ -44,7 +43,6 @@ export default function Write(props) {
   };
   const handlePostSubmit = () => {
     if (postId) {
-      console.log(`testing ${postId}`);
       API.updateBlog(blog, blogInfo, categorySelection, postId).then(() => {
         history.push("/");
       });
@@ -86,7 +84,6 @@ export default function Write(props) {
             <DropdownItem onClick={handleCatselection}>Sport</DropdownItem>
             <DropdownItem onClick={handleCatselection}>Place</DropdownItem>
             <DropdownItem onClick={handleCatselection}>Life</DropdownItem>
-            
           </DropdownMenu>
         </Dropdown>
         <p>{categorySelection}</p>

@@ -28,7 +28,6 @@ const CardPost = (props) => {
   };
 
   const getImage = () => {
-    console.log(props);
     // switch statement to return image based on category
     let img;
     switch (props.category) {

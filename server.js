@@ -13,7 +13,6 @@ const store = new MongoDBStore({
   collection: "sessions",
 });
 store.on("error", function (error) {
-  console.log(error);
 });
 const sessionOptions = {
   secret: process.env.SESSION_SECRET || "This is a secret",
