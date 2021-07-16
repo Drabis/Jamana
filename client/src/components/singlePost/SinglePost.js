@@ -53,14 +53,15 @@ export default function SinglePost(props) {
       case "Sport":
         img = process.env.PUBLIC_URL + "/assets/images/sport/football.jpeg";
         break;
-      case "Life":
+      case "Culture":
         img = process.env.PUBLIC_URL + "/assets/images/culture/yash.jpg";
         break;
-      case "Culture":
+      case "Life":
         img = process.env.PUBLIC_URL + "/assets/images/life/amani.jpg";
         break;
       case "City":
         img = process.env.PUBLIC_URL + "/assets/images/city/marakesh.jpeg";
+        break;
       default:
     }
 
