@@ -48,7 +48,7 @@ export default function SinglePost(props) {
         img = process.env.PUBLIC_URL + "/assets/images/music/drums.jpg";
         break;
       case "Food":
-        img = process.env.PUBLIC_URL + "/assets/images/food/salmon.jpg";
+        img = process.env.PUBLIC_URL + "/assets/images/food/couscous.jpeg";
         break;
       case "Sport":
         img = process.env.PUBLIC_URL + "/assets/images/sport/football.jpeg";
