@@ -16,15 +16,19 @@ const CardPost = (props) => {
   const [rating, setRating] = useState(0);
 
   const handleDecrement = () => {
-    let count = rating;
-    count--;
-    setRating(count);
+    setRating(prevRating => {
+      let newCount = Number(prevRating) - 1;
+      localStorage.setItem("rating", newCount);
+      return newCount
+    })
   };
 
   const handleIncrement = () => {
-    let count = rating;
-    count++;
-    setRating(count);
+    setRating((prevRating) => {
+      let newCount = Number(prevRating) - 1;
+      localStorage.setItem("rating", newCount);
+      return newCount;
+    });
   };
 
   const getImage = () => {
