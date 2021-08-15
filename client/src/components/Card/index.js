@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import axios from "axios";
 import { Card, Button, CardTitle, CardText, Row, Col } from "reactstrap";
@@ -25,11 +25,17 @@ const CardPost = (props) => {
 
   const handleIncrement = () => {
     setRating((prevRating) => {
-      let newCount = Number(prevRating) - 1;
+      let newCount = Number(prevRating) + 1;
       localStorage.setItem("rating", newCount);
       return newCount;
     });
   };
+  
+
+  useEffect(() => {
+    const initialValue = localStorage.getItem("rating");
+    if (initialValue) setRating(initialValue);
+  }, [])
 
   const getImage = () => {
 
