@@ -6,6 +6,42 @@
   align-items: center;
 } */
 
+
+
+.scroll-text {
+  text-align: right;
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  
+  -moz-animation: my-animation 25s ease-in-out infinite;
+  -webkit-animation: my-animation 25s ease-in-out infinite;
+  animation: my-animation 25s ease-in-out infinite;
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+.scroll-text:hover {
+  animation-play-state: paused;
+}
+
 .register {
   background: linear-gradient(
       rgba(255, 255, 255, 0.5),

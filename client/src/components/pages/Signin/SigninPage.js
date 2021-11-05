@@ -45,6 +45,8 @@ export default function SigninPage(props) {
 
   return (
     <div className="login">
+
+<h5 className=" scroll-text"> WELCOME BACK, JAMANA IS READY FOR YOU TO SHARE YOUR RECENT EXPERIENCES 😊 </h5> 
       <span className="loginTitle">Login</span>
       <form className="loginForm">
         <label>Email</label>

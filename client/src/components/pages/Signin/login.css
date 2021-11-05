@@ -5,6 +5,18 @@
   justify-content: center;
   align-items: center;
 } */
+
+.scroll-text {
+  text-align: right;
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  
+  -moz-animation: my-animation 25s ease-in-out infinite;
+  -webkit-animation: my-animation 25s ease-in-out infinite;
+  animation: my-animation 25s ease-in-out infinite;
+}
+
 .login {
   background: linear-gradient(
       rgba(248, 248, 248, 0.096),

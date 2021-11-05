@@ -7,9 +7,7 @@ export default function Footer() {
     <div className="footer ">
       <div className="footerItem">
         <span className="footerTitle">ABOUT US</span>
-        <p>
-          Your favorite Blog that allow you to share your experiences of Africa.
-        </p>
+        Your favorite Blog that allow you to share your experiences of Africa.
         <span className="footerTitle">CATEGORIES</span>
         <ul>
           <li className="footerListItem"> Life</li>

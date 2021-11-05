@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState } from "react";
 import "./register.css";
 import { Link, useHistory } from "react-router-dom";
 import API from "../../../utils/API";
@@ -39,7 +39,11 @@ export default function SigninPage(props) {
   };
 
   return (
+  
     <div className="register">
+
+    <h5 className=" scroll-text"> WELCOME TO JAMANA WHERE THE HISTORY AND THE BEAUTY OF A CONTINENT MEET. READY TO SHARE YOUR EXPERIENCES?</h5> 
+
       <span className="registerTitle">Register</span>
       <form className="registerForm">
         <label>Username</label>
