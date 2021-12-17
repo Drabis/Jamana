@@ -16,8 +16,7 @@ const API = {
             title: info.title,
             category: category,
             author: info.author,
-            description: info.description,
-            
+            description: info.description,   
         }
         return axios.post(`/api/posts/submit/${userId}`, blog)
     },

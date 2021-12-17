@@ -16,7 +16,7 @@ export default function Home(props) {
     const newPost = posts.filter((post) => post._id !== id);
     setPosts(newPost);
   };
-
+// Get user post on reload
   useEffect(() => {
     API.getPostsByUser(props.user).then((response) => {
       setPosts(response.data[0].posts);
@@ -40,10 +40,8 @@ export default function Home(props) {
       if (post.body) {
         post.html = draftToHtml(JSON.parse(post.body));
       }
-
     });
-    setPost1(postList);
-    
+    setPost1(postList); 
   };
 
   return (

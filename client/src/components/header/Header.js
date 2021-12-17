@@ -4,11 +4,7 @@ import Image from "../../assets/images/header.jpg";
 
 export default function Header() {
   return (
-    <div className="header">
-      <div className="headerTitles">
-        {/* <span className="headerTitleSm">Country & Culture Blog</span> */}
-        {/* <span className="headerTitleLg">Jamana</span> */}
-      </div>
+    <div className="header"> 
       <img className="headerImg" src={Image} alt="" />
     </div>
   );

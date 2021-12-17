@@ -38,7 +38,7 @@ export default function TopBar(props) {
           <li className="topListItem">
             {props.user ? (
               <Link className="link" to="/write">
-                WRITE
+                WRITE A BLOG
               </Link>
             ) : null}
           </li>
