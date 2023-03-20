@@ -23,8 +23,6 @@ export default function About() {
           your thoughts, you can also delete it at any instant of time.
         </p>
         <hr className="gold-hr" />
-    
-       
       </main>
     </div>
   );

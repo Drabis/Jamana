@@ -42,5 +42,6 @@ const API = {
         return axios.get("/api/posts/" + id)
     }
     
+    
 }
 export default API

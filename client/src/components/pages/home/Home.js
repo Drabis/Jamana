@@ -22,7 +22,7 @@ export default function Home(props) {
       setPosts(response.data[0].posts);
     });
   }, []);
-
+  
   useEffect(() => {
     handlepostlimit();
   }, [posts]);

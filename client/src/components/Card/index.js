@@ -22,7 +22,7 @@ const CardPost = (props) => {
       return newCount
     })
   };
-
+//
   const handleIncrement = () => {
     setRating((prevRating) => {
       let newCount = Number(prevRating) + 1;
