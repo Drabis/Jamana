@@ -30,7 +30,7 @@ Click the GitHub link provided above to the APP REPO. Click on the green button 
 
 ## Technologies
 -   [MongoDB Atlas](https://www.mongodb.com/cloud/atlas): It provides a free cloud service to store MongoDB collections.
--   [Draft,js](https://draftjs.org/): Draft.js is a framework for building rich text editors in React, powered by an immutable model and abstracting over cross-browser differences.
+-   [Draft.js](https://draftjs.org/): Draft.js is a framework for building rich text editors in React, powered by an immutable model and abstracting over cross-browser differences.
 -   [React.js](https://reactjs.org/): A JavaScript library for building user interfaces.
 -   [Node.js](https://nodejs.org/en/): A runtime environment to help build fast server applications using JS.
 -   [Express.js](https://expressjs.com/): A popular Node.js framework to build scalable server-side for web applications.
