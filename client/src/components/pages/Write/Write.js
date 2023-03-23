@@ -13,7 +13,9 @@ import {
   DropdownMenu,
 } from "reactstrap";
 
+// Define Write component
 export default function Write(props) {
+  // Get post ID from URL parameter and initialize necessary state variables
   let { postId } = useParams();
   const history = useHistory();
   const [blog, setBlog] = useState({});
@@ -21,6 +23,7 @@ export default function Write(props) {
   const [parse, setParse] = useState({});
   const [categorySelection, setCategorySelection] = useState();
 
+  // Fetch post data if editing an existing post, otherwise reset state variables
   useEffect(() => {
     if (postId) {
       API.getPostById(postId).then((response) => {
@@ -38,9 +41,12 @@ export default function Write(props) {
     }
   }, [postId]);
 
+  // Handle changes to input fields by updating the corresponding state variables
   const handleInputChange = (e) => {
     setBlogInfo({ ...blogInfo, [e.target.name]: e.target.value });
   };
+
+  // Handle form submission by making an API call to either create or update the blog post, then redirect to homepage
   const handlePostSubmit = () => {
     if (postId) {
       API.updateBlog(blog, blogInfo, categorySelection, postId).then(() => {
@@ -53,10 +59,13 @@ export default function Write(props) {
     }
   };
 
+  // Convert RichEditor content to raw JSON and update blog state variable
   const updateBlog = (input) => {
     const raw = JSON.stringify(convertToRaw(input));
     setBlog(raw);
   };
+
+  // Initialize state variable and functions for dropdown menu
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
@@ -64,6 +73,7 @@ export default function Write(props) {
     setCategorySelection(e.target.textContent);
   };
 
+  // Render component JSX
   return (
     <Row>
       <div className="write">
@@ -78,6 +88,7 @@ export default function Write(props) {
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
           <DropdownToggle caret>Dropdown</DropdownToggle>
           <DropdownMenu>
+            {/* Define dropdown menu items and handle click events */}
             <DropdownItem onClick={handleCatselection}>Music</DropdownItem>
             <DropdownItem onClick={handleCatselection}>Food</DropdownItem>
             <DropdownItem onClick={handleCatselection}>Culture</DropdownItem>
