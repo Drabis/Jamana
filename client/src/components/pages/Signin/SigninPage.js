@@ -1,34 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./login.css";
 import { Link, useHistory } from "react-router-dom";
 import API from "../../../utils/API";
 
 export default function SigninPage(props) {
-  let history = useHistory();
+  const history = useHistory();
   const [formInput, setFormInput] = useState({});
-  // const [validation, setValidation] = useState({name:false, email: false});
-  const [errorMessage, setErrorMessage] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [validator, setValidator] = useState({ email: false, name: false });
 
   const handleInputChange = (e) => {
-    setFormInput({ ...formInput, [e.target.name]: e.target.value });
-    const targetName = e.target.name;
-    switch (targetName) {
+    const { name, value } = e.target;
+    setFormInput({ ...formInput, [name]: value });
+    switch (name) {
       case "email":
         const emailCheck = new RegExp(
           /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
         );
-        if (emailCheck.test(e.target.value)) {
-          setFormInput({ ...formInput, [e.target.name]: e.target.value });
-          setValidator({ ...validator, email: false });
-        } else {
-          setValidator({ ...validator, email: true });
-        }
+        setValidator({ ...validator, email: !emailCheck.test(value) });
         break;
       default:
         return;
     }
   };
+
   const handleSignin = (e) => {
     e.preventDefault();
     API.signinUser(formInput)
@@ -45,18 +40,23 @@ export default function SigninPage(props) {
 
   return (
     <div className="login">
-
-<h5 className=" scroll-text"> WELCOME BACK, JAMANA IS READY FOR YOU TO SHARE YOUR RECENT EXPERIENCES 😊 </h5> 
+      <h5 className="scroll-text">
+        WELCOME BACK, JAMANA IS READY FOR YOU TO SHARE YOUR RECENT EXPERIENCES
+        😊
+      </h5>
       <span className="loginTitle">Login</span>
       <form className="loginForm">
         <label>Email</label>
         <input
           name="email"
           onChange={handleInputChange}
-          typetype="text"
+          type="text"
           placeholder="Enter your email"
         />
         {errorMessage && <div className="error">{errorMessage}</div>}
+        {validator.email && (
+          <div className="error">Please enter a valid email address</div>
+        )}
         <label>Password</label>
         <input
           name="password"
